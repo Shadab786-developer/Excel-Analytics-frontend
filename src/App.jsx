@@ -1,13 +1,22 @@
-import React from "react";
+import React from 'react'
+import {BrowserRouter , Route, Routes } from 'react-router-dom';
+import Index from './components/Index';
+import Register from './components/Register';
+import Login from './components/Login';
 
-function App() {
+const App = () => {
   return (
-    <>
-      <div className='text-5xl bg-gray-200 font-bold h-screen flex items-center justify-center text-red-600'>
-       Hello Welcome To Excel Analysis Project
-      </div>
-    </>
-  );
+   <>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        
+        </Routes>
+    </BrowserRouter>
+  </>
+  )
 }
 
-export default App;
+export default App
