@@ -2,13 +2,11 @@ import React from 'react'
 
 const Index = () => {
   return (
-    <>
     <div>
-        <h1>hii</h1>
+       <h1>hii</h1>
     </div>
-    
-    </>
   )
 }
 
 export default Index
+
