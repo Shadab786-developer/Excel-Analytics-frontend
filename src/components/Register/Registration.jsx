@@ -7,6 +7,7 @@ function UserRegistration() {
   const [userName, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -40,14 +41,12 @@ function UserRegistration() {
   };
 
   return (
-    <div className="sm:p-1 mt-3 flex items-center justify-center bg-white">
+    <div className="flex items-center justify-center bg-white min-h-screen">
       <form
         onSubmit={handleLogin}
         className="bg-purple-800 text-white p-8 rounded-3xl shadow-md w-full max-w-sm"
       >
-        <h2 className="text-2xl font-bold mb-6 text-center">
-          User Registration
-        </h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">Registration</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <div className="mb-4">
           <label className="block mb-1">User Name</label>
@@ -78,6 +77,23 @@ function UserRegistration() {
             className="w-full p-2 border rounded"
             required
           />
+        </div>
+        <div className="mb-6">
+          <label className="block mb-1">Role</label>
+          <select
+            type="text"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+            className="w-full p-2 border rounded "
+            required
+          >
+            <option value="user" className="text-black">
+              User
+            </option>
+            <option value="admin" className="text-black">
+              Admin
+            </option>
+          </select>
         </div>
 
         <button
