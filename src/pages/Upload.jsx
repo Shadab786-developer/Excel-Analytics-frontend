@@ -6,7 +6,6 @@ function Upload() {
   const [file, setFile] = useState(null);
   const [xAxis, setXAxis] = useState("");
   const [yAxis, setYAxis] = useState("");
-  const [chartType, setChartType] = useState("");
 
   const navigate = useNavigate();
   const handleFileChange = (e) => {
@@ -59,7 +58,7 @@ function Upload() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex items-center gap-2 mb-6">
-          <img src="/images/logo.png" alt="SheetIQ" className="h-10 w-29" />
+          {/* <img src="/images/logo.png" alt="SheetIQ" className="h-10 w-29" /> */}
           <h1 className="text-2xl font-bold text-gray-800">
             Excel Analytics Platform
           </h1>
@@ -114,19 +113,6 @@ function Upload() {
                 value={yAxis}
                 onChange={(e) => setYAxis(e.target.value)}
                 placeholder="Enter the Name for Y-Axis"
-                className="w-full p-2 rounded-md bg-gray-200 text-gray-800 focus:outline-none"
-              />
-            </div>
-
-            <div className="shadow-xl">
-              <label className="block font-semibold mb-1 text-gray-700">
-                Select the Chart Type:
-              </label>
-              <input
-                type="text"
-                value={chartType}
-                onChange={(e) => setChartType(e.target.value)}
-                placeholder="e.g. Bar, Line, Pie"
                 className="w-full p-2 rounded-md bg-gray-200 text-gray-800 focus:outline-none"
               />
             </div>
